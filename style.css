@@ -1,0 +1,217 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f0f5;
+  color: #333;
+}
+
+nav {
+  background-color: #222;
+  padding: 15px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid-item {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.grid-item h2 {
+  margin: 20px;
+  color: #0077cc;
+}
+
+.grid-item p {
+  margin: 0 20px 20px;
+  line-height: 1.6;
+}
+.blog-post {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.blog-post img {
+  width: 100%;
+  max-width: 450px;     /* Giới hạn chiều rộng tối đa */
+  height: auto;
+  border-radius: 10px;
+  margin: 0 auto 20px;  /* Căn giữa ảnh và tạo khoảng cách dưới */
+  display: block;
+}
+
+
+.blog-post h1 {
+  color: #0077cc;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.blog-post h2 {
+  color: #333;
+  margin-top: 30px;
+}
+
+.blog-post p, .blog-post ul {
+  line-height: 1.8;
+  font-size: 1.05em;
+}
+
+.blog-post ul {
+  padding-left: 20px;
+}
+
+.back-link {
+  display: block;
+  margin: 40px 0;
+  text-align: center;
+  color: #0077cc;
+  font-weight: bold;
+  text-decoration: none;
+}
+.blog-post section {
+  margin-top: 30px;
+}
+
+.blog-post h2 {
+  color: #0077cc;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.blog-post ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.blog-post ul li {
+  margin-bottom: 8px;
+}
+
+.keywords {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 20px;
+}
+/* Header đẹp hơn */
+.page-header {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: transparent;
+  color: #f0f0f0;
+}
+.page-header h1 {
+  font-size: 3em; /* tăng kích thước chữ */
+  font-weight: 700;
+  color: #ffffff; /* màu sáng rõ */
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4); /* tạo độ nổi */
+   border-bottom: 2px solid #0077cc;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.page-header p {
+  font-size: 1.4em;              /* to hơn */
+  font-weight: 600;              /* đậm hơn */
+ color: #000000;               /* trắng rõ */
+  text-shadow: none;/* tạo độ nổi */
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+/* Card nâng cấp */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid-item {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h2 {
+  margin-top: 0;
+  color: #0077cc;
+}
+
+.card-content p {
+  margin-top: 10px;
+  font-size: 0.95em;
+  line-height: 1.5;
+}

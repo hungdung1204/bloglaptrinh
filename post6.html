@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Lập trình mạng với Java – Socket & Client-Server</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="myblog.html">My Blog</a></li>
+      <li><a href="about.html">Giới thiệu</a></li>
+      <li><a href="contact.html">Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <article class="blog-post">
+    <img src="images/image06.png" alt="Sơ đồ kết nối socket trong Java">
+    <img src="images/image07.png" alt="Mô hình client-server">
+
+    <h1>Lập trình mạng với Java – Hiểu rõ Socket và mô hình Client-Server</h1>
+    <p class="keywords"><strong>Từ khóa:</strong> Java, lập trình mạng, socket, client-server, TCP, UDP</p>
+
+    <section>
+      <h2>1. Giới thiệu</h2>
+      <p>Socket là cầu nối giữa hai thiết bị giao tiếp qua mạng. Trong Java, bạn có thể sử dụng các lớp như <code>ServerSocket</code> và <code>Socket</code> để xây dựng ứng dụng mạng theo mô hình client-server. Đây là nền tảng cho các ứng dụng như chat, game online, hoặc hệ thống giám sát.</p>
+    </section>
+
+    <section>
+      <h2>2. Kiến thức nền tảng</h2>
+      <ul>
+        <li><strong>Socket:</strong> điểm cuối của kết nối hai chiều giữa hai tiến trình.</li>
+        <li><strong>ServerSocket:</strong> lắng nghe yêu cầu kết nối từ client.</li>
+        <li><strong>TCP:</strong> truyền dữ liệu tin cậy, kiểm tra lỗi.</li>
+        <li><strong>UDP:</strong> truyền nhanh, không đảm bảo độ tin cậy.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Ví dụ Java – Tạo Server đơn giản</h2>
+      <pre><code>
+// Server.java
+import java.net.*;
+import java.io.*;
+
+public class Server {
+    public static void main(String[] args) throws IOException {
+        ServerSocket server = new ServerSocket(5000);
+        System.out.println("Server đang chờ kết nối...");
+        Socket socket = server.accept();
+        BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
+        output.println("Kết nối thành công!");
+        System.out.println("Client nói: " + input.readLine());
+        server.close();
+    }
+}
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>4. Ứng dụng thực tế</h2>
+      <ul>
+        <li>Ứng dụng chat nội bộ trong mạng LAN.</li>
+        <li>Game online với kết nối thời gian thực.</li>
+        <li>Hệ thống giám sát thiết bị từ xa.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Kết luận</h2>
+      <p>Socket là nền tảng quan trọng cho mọi ứng dụng mạng. Việc hiểu rõ cách hoạt động của mô hình client-server và cách sử dụng socket trong Java sẽ giúp bạn xây dựng những hệ thống kết nối mạnh mẽ, tin cậy và hiệu quả.</p>
+    </section>
+
+    <a href="index.html" class="back-link">← Quay lại trang chính</a>
+  </article>
+</body>
+</html>
+

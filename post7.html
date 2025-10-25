@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Ứng dụng Chat đơn giản bằng Java Socket</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="myblog.html">My Blog</a></li>
+      <li><a href="about.html">Giới thiệu</a></li>
+      <li><a href="contact.html">Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <article class="blog-post">
+    <img src="images/image08.png" alt="Sơ đồ ứng dụng chat client-server">
+    
+
+    <h1> Xây dựng ứng dụng Chat đơn giản bằng Java Socket</h1>
+    <p class="keywords"><strong>Từ khóa:</strong> Java, socket, client-server, ứng dụng chat, TCP/IP</p>
+
+    <section>
+      <h2>1. Giới thiệu</h2>
+      <p>Sau khi đã hiểu khái niệm socket, bạn có thể bắt tay vào xây dựng một ứng dụng chat đơn giản giữa hai máy tính. Đây là ví dụ kinh điển trong lập trình mạng, giúp bạn nắm rõ cách truyền dữ liệu hai chiều qua TCP/IP.</p>
+    </section>
+
+    <section>
+      <h2>2. Nội dung chính</h2>
+      <ul>
+        <li>Sử dụng <strong>ServerSocket</strong> để tạo server lắng nghe kết nối.</li>
+        <li>Sử dụng <strong>Socket</strong> từ phía client để kết nối và gửi tin nhắn.</li>
+        <li>Sử dụng <strong>Thread</strong> để lắng nghe dữ liệu liên tục mà không chặn chương trình.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Ví dụ Java – Phía Client</h2>
+      <pre><code>
+// Client.java
+import java.net.*;
+import java.io.*;
+
+public class Client {
+    public static void main(String[] args) throws IOException {
+        Socket socket = new Socket("localhost", 5000);
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
+        BufferedReader inServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        System.out.println("Server: " + inServer.readLine());
+        System.out.print("Nhập tin nhắn: ");
+        String message = input.readLine();
+        output.println(message);
+        socket.close();
+    }
+}
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>4. Ứng dụng thực tế</h2>
+      <ul>
+        <li>Hệ thống chat nội bộ trong doanh nghiệp hoặc lớp học.</li>
+        <li>Quản lý thông báo thời gian thực giữa các thiết bị.</li>
+        <li>Giao tiếp giữa các module trong hệ thống phân tán.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Kết luận</h2>
+      <p>Một ứng dụng chat đơn giản là bài tập lý tưởng để hiểu sâu về socket, thread và cơ chế truyền dữ liệu trong mạng TCP/IP. Từ đây, bạn có thể mở rộng thành ứng dụng chat nhiều người, thêm giao diện đồ họa hoặc tích hợp bảo mật.</p>
+    </section>
+
+    <a href="index.html" class="back-link">← Quay lại trang chính</a>
+  </article>
+</body>
+</html>
